@@ -9,10 +9,15 @@ const babelLoaderConfiguration = {
   },
 };
 
+const cssLoaderConfiguration = {
+  test: /\.css$/,
+  use: ['style-loader', 'css-loader'],
+};
+
 module.exports = {
   entry: path.resolve('index.js'),
   module: {
-    rules: [babelLoaderConfiguration],
+    rules: [babelLoaderConfiguration, cssLoaderConfiguration],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -38,5 +43,8 @@ module.exports = {
   devServer: {
     compress: true,
     port: 8080,
+    static: {
+      directory: path.join('public'), // 정적 파일 제공 폴더
+    },
   },
 };
