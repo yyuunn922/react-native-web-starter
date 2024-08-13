@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const dotenv = require('dotenv').config({path: './.env'});
 
 const babelLoaderConfiguration = {
   test: /\.(ts|tsx|js|jsx)$/,
@@ -38,9 +39,8 @@ module.exports = {
       filename: 'index.html',
     }),
     new webpack.DefinePlugin({
-      'process.env': JSON.stringify({}),
-      'process.env.PLATFORM': JSON.stringify('web'),
-      __DEV__: JSON.stringify(process.env.NODE_ENV !== 'production'), // __DEV__ 변수 정의
+      'process.env': JSON.stringify(dotenv.parsed || {}),
+      __DEV__: JSON.stringify(process.env.NODE_ENV !== 'production'),
     }),
   ],
   resolve: {
