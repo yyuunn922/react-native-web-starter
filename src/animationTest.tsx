@@ -18,7 +18,7 @@ export const AnimationTest = () => {
   useEffect(() => {
     rotation.value = withTiming(360, {
       duration: 2000,
-      easing: Easing.linear, // Easing을 올바르게 사용
+      easing: Easing.linear,
     });
   }, [rotation]);
 
