@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 const babelLoaderConfiguration = {
   test: /\.(ts|tsx|js|jsx)$/,
@@ -12,15 +13,9 @@ const babelLoaderConfiguration = {
   },
 };
 
-const inCloud = {
+const babelLoaderConfigurationInclude = {
   test: /\.(js|jsx|ts|tsx)$/,
   include: [path.resolve('node_modules/react-native-reanimated')],
-  use: {
-    loader: 'babel-loader',
-    options: {
-      configFile: path.resolve(__dirname, 'babel.config.web.js'),
-    },
-  },
 };
 
 const cssLoaderConfiguration = {
@@ -31,12 +26,21 @@ const cssLoaderConfiguration = {
 module.exports = {
   entry: path.resolve('index.js'),
   module: {
-    rules: [babelLoaderConfiguration, cssLoaderConfiguration, inCloud],
+    rules: [
+      babelLoaderConfiguration,
+      cssLoaderConfiguration,
+      babelLoaderConfigurationInclude,
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'index.html'),
       filename: 'index.html',
+    }),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify({}),
+      'process.env.PLATFORM': JSON.stringify('web'),
+      __DEV__: JSON.stringify(process.env.NODE_ENV !== 'production'), // __DEV__ 변수 정의
     }),
   ],
   resolve: {
@@ -66,7 +70,7 @@ module.exports = {
     compress: true,
     port: 8080,
     static: {
-      directory: path.join('public'), // 정적 파일 제공 폴더
+      directory: path.resolve('public'),
     },
   },
 };

@@ -10,7 +10,7 @@ export const Main = () => {
         <Text>{Platform.OS}</Text>
         <Text>기본</Text>
         <PlatformTest />
-        {/*<AnimationTest />*/}
+        <AnimationTest />
       </View>
     </SafeAreaView>
   );
