@@ -6,6 +6,20 @@ const babelLoaderConfiguration = {
   exclude: /node_modules/,
   use: {
     loader: 'babel-loader',
+    options: {
+      configFile: path.resolve(__dirname, 'babel.config.web.js'),
+    },
+  },
+};
+
+const inCloud = {
+  test: /\.(js|jsx|ts|tsx)$/,
+  include: [path.resolve('node_modules/react-native-reanimated')],
+  use: {
+    loader: 'babel-loader',
+    options: {
+      configFile: path.resolve(__dirname, 'babel.config.web.js'),
+    },
   },
 };
 
@@ -17,7 +31,7 @@ const cssLoaderConfiguration = {
 module.exports = {
   entry: path.resolve('index.js'),
   module: {
-    rules: [babelLoaderConfiguration, cssLoaderConfiguration],
+    rules: [babelLoaderConfiguration, cssLoaderConfiguration, inCloud],
   },
   plugins: [
     new HtmlWebpackPlugin({
