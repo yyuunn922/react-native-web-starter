@@ -2,7 +2,7 @@ import {Platform, SafeAreaView, Text, View} from 'react-native';
 import React from 'react';
 import {PlatformTest} from './platformTest.tsx';
 import {AnimationTest} from './animationTest.tsx';
-import {Key} from './util/envKey.tsx';
+import {Key} from '../util/envKey.tsx';
 
 export const Main = () => {
   return (

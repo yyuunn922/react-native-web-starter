@@ -75,7 +75,7 @@ yarn-error.log
 
 .env
 env/
-public/output.css
+assets/output.css
 
 # Expo
 .expo

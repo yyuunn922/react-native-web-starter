@@ -1,8 +1,7 @@
 import React from 'react';
 import './global.css';
-import {Main} from './src/main';
-import {CanvasTest} from './src/canvasTest.tsx';
+import {Route} from './src/route/route.tsx';
 
 export const App = () => {
-  return <CanvasTest />;
+  return <Route />;
 };
