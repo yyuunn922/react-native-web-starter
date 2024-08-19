@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "reactNativeWeb.app"
-               BlueprintName = "reactNativeWeb"
-               ReferencedContainer = "container:reactNativeWeb.xcodeproj">
+               BuildableName = "reactnativewebstarter.app"
+               BlueprintName = "reactnativewebstarter"
+               ReferencedContainer = "container:reactnativewebstarter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "reactNativeWebTests.xctest"
-               BlueprintName = "reactNativeWebTests"
-               ReferencedContainer = "container:reactNativeWeb.xcodeproj">
+               BuildableName = "reactnativewebstarterTests.xctest"
+               BlueprintName = "reactnativewebstarterTests"
+               ReferencedContainer = "container:reactnativewebstarter.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "reactNativeWeb.app"
-            BlueprintName = "reactNativeWeb"
-            ReferencedContainer = "container:reactNativeWeb.xcodeproj">
+            BuildableName = "reactnativewebstarter.app"
+            BlueprintName = "reactnativewebstarter"
+            ReferencedContainer = "container:reactnativewebstarter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "reactNativeWeb.app"
-            BlueprintName = "reactNativeWeb"
-            ReferencedContainer = "container:reactNativeWeb.xcodeproj">
+            BuildableName = "reactnativewebstarter.app"
+            BlueprintName = "reactnativewebstarter"
+            ReferencedContainer = "container:reactnativewebstarter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

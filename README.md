@@ -1,79 +1,27 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 소개
+> 많은 부분, 비효율적이고, 수정되야할 부분들이 존재합니다, 계속 업데이트 예정입니다.
 
-# Getting Started
+ReactNative에 ReactNativeWeb이 셋팅되어있습니다, 새로운 프로젝트를 시작할때 Native와 함께 Web환경까지 고려하고 있다면, 귀찮은 초기셋팅 없이 프로젝트를 바로 시작할수있습니다,
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+Starter에는 Webgl을 쉽게 구현할수있도록, React-Three-Fiber를 사용합니다, expo module을 사용하지만, expo 프로젝트는 아닙니다.
 
-## Step 1: Start the Metro Server
+- [x] react-native
+- [x] react-native-web (webpack)
+- [x] react-native-vector-icon
+- [x] react-three-fiber ( expo module, drei )
+- [x] dotenv
+- [ ] react-three-fiber-sound
+- [ ] state
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
-
-To start Metro, run the following command from the _root_ of your React Native project:
-
-```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+# 어떻게 시작해야 할까요?
 ```
+// 새로운 프로젝트 이름으로 starter를 clone합니다
+git clone https://github.com/yyuunn922/react-native-web-starter NewAppName
+rm -rf .git && npm install && cd ios && pod install && cd .. && ./gradlew clean && cd ..
 
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+// 새로운 이름으로 프로젝트를 변경합니다
+react-native-rename "NewAppName" --skipGitStatusCheck or react-native-rename "NewAppName" --bundleID "com.newapp.name" --skipGitStatusCheck
+// package.js에서 "start:dev"를 실행하면, 필요 env가 복사됩니다, 필요한 환경을 추가해서 사용하세요
 ```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+끝 입니다, 이제 개발을 시작하세요.
+> 이후, .gitignore에 .env 및 숨김파일을 설정후 새로운 레포지토리를 생성 init 하세요, 

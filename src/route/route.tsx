@@ -2,7 +2,7 @@ import React from 'react';
 import {LinkingOptions, NavigationContainer} from '@react-navigation/native';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {View} from 'react-native';
+import {Platform, View} from 'react-native';
 import {Key} from '../util/envKey.tsx';
 import {ScreenListData, RouteListEnum} from './routeList.ts';
 
@@ -35,7 +35,13 @@ export const Route = () => {
               key={item.name}
               name={item.name}
               component={item.component}
-              options={{title: item.title ? item.title : document.title}}
+              options={{
+                title: item.title
+                  ? item.title
+                  : Platform.OS === 'web'
+                  ? document.title
+                  : '',
+              }}
             />
           ))}
         </Stack.Navigator>
