@@ -1,10 +1,11 @@
 import React, {View} from 'react-native';
 import './global.css';
-import {RouteListEnum, ScreenListData} from './src/route.tsx';
 import {Platform} from 'react-native';
 import {LinkingOptions, NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Key} from './src/util/envKey.tsx';
+import {ScreenListData} from './src/route/screen.tsx';
+import {ScreenListName} from './src/route/screenType.tsx';
 
 const Stack = createNativeStackNavigator();
 type ScreenConfig = {
@@ -29,7 +30,7 @@ export const App = () => {
       <NavigationContainer linking={linking}>
         <Stack.Navigator
           screenOptions={{headerShown: false}}
-          initialRouteName={RouteListEnum.main}>
+          initialRouteName={ScreenListName.main}>
           {ScreenListData.map(item => (
             <Stack.Screen
               key={item.name}
