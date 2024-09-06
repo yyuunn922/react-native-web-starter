@@ -1,7 +1,10 @@
-import React, {View} from 'react-native';
+import React from 'react-native';
 import './global.css';
 import {Platform} from 'react-native';
-import {LinkingOptions, NavigationContainer} from '@react-navigation/native';
+import {
+  LinkingOptions,
+  NavigationContainer,
+} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Key} from './src/util/envKey.tsx';
 import {ScreenListData} from './src/route/screen.tsx';
@@ -26,7 +29,7 @@ const linking: LinkingOptions<ReactNavigation.RootParamList> = {
 
 export const App = () => {
   return (
-    <View className={'w-full h-full'}>
+    <>
       <NavigationContainer linking={linking}>
         <Stack.Navigator
           screenOptions={{headerShown: false}}
@@ -47,6 +50,6 @@ export const App = () => {
           ))}
         </Stack.Navigator>
       </NavigationContainer>
-    </View>
+    </>
   );
 };

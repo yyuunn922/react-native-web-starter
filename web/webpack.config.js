@@ -17,7 +17,7 @@ const babelLoaderConfiguration = {
 };
 
 const dataLoader = {
-  test: /\.(png|jpe?g|gif|svg|ttf|otf|eot|woff|woff2)$/i,
+  test: /\.(png|jpe?g|gif|svg|ttf|otf|eot|woff|woff2|mp3)$/i,
   use: [
     {
       loader: 'file-loader',
@@ -29,6 +29,10 @@ const dataLoader = {
           }
           if (/\.(ttf|otf|eot|woff|woff2)$/i.test(resourcePath)) {
             return `assets/fonts/${url}`;
+          }
+          if (/\.(mp3)$/i.test(resourcePath)) {
+            // mp3 파일 경로 추가
+            return `assets/sound/${url}`; // 원하는 경로로 수정 가능
           }
         },
       },

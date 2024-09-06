@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const {ColorData} = require('./src/util/ColorData');
 module.exports = {
   // NOTE: Update this to include the paths to all of your component files.
   content: [
@@ -9,7 +10,9 @@ module.exports = {
   ],
   presets: [require('nativewind/preset')],
   theme: {
-    extend: {},
+    extend: {
+      colors: ColorData,
+    },
   },
   plugins: [],
 };

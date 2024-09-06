@@ -5,7 +5,7 @@ const {withNativeWind} = require('nativewind/metro');
 const config = mergeConfig(getDefaultConfig(__dirname), {
   resolver: {
     sourceExts: ['js', 'jsx', 'json', 'ts', 'tsx', 'cjs', 'mjs'],
-    assetExts: ['glb', 'gltf', 'png', 'jpg'],
+    assetExts: ['glb', 'gltf', 'png', 'jpg', 'mp3', 'wav'],
   },
 });
 
